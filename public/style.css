@@ -1,0 +1,389 @@
+html {
+    font-family: 'Fira Sans';
+    font-weight: 300;
+    margin: 0px;
+    padding 0px;
+    font-size: 16px;
+}
+
+body {
+    margin: inherit;
+    padding: inherit;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.spin {
+    -webkit-animation:spin 2s infinite linear;
+            animation:spin 2s infinite linear;
+}
+
+/* taken from W3Schools example: http://www.w3schools.com/howto/howto_css_loader.asp */
+.loader {
+    border: 1px solid #f3f3f3; /* Light grey */
+    border-top: 1px solid #222222;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.loader.light {
+    border: 1px solid #f3f3f3;
+    border-top: 1px solid #222222;
+}
+
+.loader.dark {
+    border: 1px solid #222222;
+    border-top: 1px solid #ffffff;
+}
+
+.loader.large { 
+    width: 128px;
+    height: 128px;
+}
+
+.loader.small {
+    width: 48px;
+    height: 48px;
+}
+
+.btn {
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background-color: #5DC061;
+}
+
+.btn:active {
+    background-color: #3B9E39;
+}
+
+#login {
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+    color: white;
+    display: none;
+}
+
+#title-page {
+    font-size: 64px;
+    font-weight: 500;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+}
+
+#loading-icon {
+    position: relative;
+    top: 25%;
+    transform: translateY(-25%);
+    vertical-align: center;
+}
+
+#titlebar {
+    min-width: 100%;
+    max-width: 100%;
+    color: white;
+    margin: 0px;
+    position: fixed;
+    background-color: #4CAF50;
+    text-align: center;
+    z-index: 1;
+    height: 48px;
+}
+
+#searchMenu {
+    min-height: 32px;
+    padding-top: 16px;
+    background-color: #222222;
+    display: none;
+}
+
+#searchMenu>#main {
+    float: left;
+    margin-left: 16px;
+    width: calc(100% - 100px);
+    border-radius: 32px;
+    border: white solid 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#minrating {
+    padding-bottom: 8px;
+}
+
+#minrating>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#matching {
+    padding: 8px;
+}
+
+#matching>span {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 16px;
+}
+
+#matching>span>i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#matching>span>p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+
+#done {
+    margin-right: 16px;
+    line-height: 18px;
+}
+
+#titlebar>#nav {
+    display: inline-block;
+    float: left;
+    padding-top: 12px;
+    padding-left: 24px;
+    color: #4CA050;
+}
+
+#titlebar>#text {
+    width: 70%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 48px;
+    vertical-align: middle;
+    
+}
+
+#titlebar>#search {
+    display: inline-block;
+    float: right;
+    padding-top: 12px;
+    padding-right: 24px
+}
+
+#mainview {
+    display: inline-block;
+    position: relative;
+    margin-top: 48px;
+    overflow: hidden;
+    height: calc(100% - 48px);
+    width: 100%;
+}
+
+#playlists {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+}
+
+#listPlaylists {
+    margin: 0px;
+    list-style: none;
+    overflow-x: hidden;
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#listitem {
+    padding: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0px;
+    padding-right: 0px;
+    vertical-align: middle;
+    line-height: 48px;
+}
+
+#albumArt {
+    padding-left: 8px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#albumArt>img {
+    height: 48px;
+    width: 48px;
+}
+
+#content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 65%;
+    min-width: 65%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#listnav {
+    padding-right: 8px;
+    margin-right: 16px;
+    margin-left: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    float: right;
+}
+
+#listnav>i {
+    vertical-align: inherit;
+    line-height: inherit;
+}
+
+#tracklist {
+    position: absolute;
+    left: 100%;
+}
+
+#songlist {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+}
+
+#details {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 200%;
+}
+
+.placeholder {
+    font-size: 48px !important;
+}
+
+.first {
+    padding-top: 8px !important;
+}
+
+.last {
+    padding-bottom: 8px !important;
+}
+
+#optionsList {
+    background-color: #222222;
+    color: white;
+    list-style: none;
+}
+
+#optionsList>li {
+    line-height: 0px;
+    padding: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#editTags {
+    line-height: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#editTags>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#tagsEditor {
+    padding-bottom: 1px;
+}
+
+#showDetails {
+    line-height: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#showDetails>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#tagsForm>i {
+    vertical-align: middle;
+}
+
+#tagsForm>input {
+    width: calc(100% - 84px);
+    border-radius: 32px;
+    border: white solid 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#tags {
+    vertical-align: middle;
+    line-height: 0;
+}
+
+#tags>span>i {
+    vertical-align: middle;
+}
+
+#rating>span>i {
+    vertical-align: middle;
+}
+
+#tagsList {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 8px;
+    white-space: normal;
+}
+
+#tag {
+    display: inline-block;
+    margin-right: 4px;
+    border: white solid 1px;
+    border-radius: 16px;
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-right: 2px;
+    color: #222222;
+    background-color: white;
+}
+
+#tag>span>i {
+    vertical-align: middle;
+    font-size: 16px;
+}
+

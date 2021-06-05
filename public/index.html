@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<meta content="initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://code.cdn.mozilla.net/fonts/fira.css">
+		<script 
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+		type="text/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/lodash/4.17.1/lodash.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="model.js"></script>
+        <script type="text/javascript" src="titleBarView.js"></script>
+        <script type="text/javascript" src="mainView.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+		<title></title>
+	</head>
+
+	<body onload="startApp()"> 
+		<!-- "Page" to show when not logged in -->
+		<div id="login">
+            <center id="title-page">
+                <p>Tagify</p>
+                <button id="start" class="btn">Log in</button>
+            </center>
+		</div>
+
+        <!-- Title bar to show once logged in -->
+        <div id="titlebar">
+            <span id="nav"><i class="material-icons">arrow_back</i></span>
+            <span id="text"></span>
+            <span id="search"><i class="material-icons">search</i></span>
+            <div id="searchMenu">
+                <input id="main" type="text" placeholder="Search with tags separated by spaces"></input>
+                <i id="clear" class='material-icons'>clear</i>
+                <i id="done" class='material-icons'>arrow_forward</i>
+                <div id="matching">
+                    <span id="radio1">
+                        <i class="material-icons">radio_button_checked</i>
+                        <p>Match any tag</p>
+                    </span>
+                    <span id="radio2">
+                        <i class="material-icons">radio_button_unchecked</i>
+                        <p>Match all tags</p>
+                    </span>
+                </div>
+                <div id="minrating">
+                    <span>Minimum rating: </span>
+                    <span id="stars">
+                        <span id="star1"><i class="material-icons">star_border</i></span>
+                        <span id="star2"><i class="material-icons">star_border</i></span>
+                        <span id="star3"><i class="material-icons">star_border</i></span>
+                        <span id="star4"><i class="material-icons">star_border</i></span>
+                        <span id="star5"><i class="material-icons">star_border</i></span> 
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- main view area and main list template -->
+		<div id="mainview">
+            <span id="playlists"></span>
+            <span id="songlist">
+                <ul><li>test1</li></ul>
+            </span>
+            <span id="details">
+                <ul><li>test2</li></ul>
+            </span>
+        </div>
+        <template id="playlistsTemplate">
+            <ul id="listPlaylists"></ul>
+        </template>
+        <template id="itemTemplate">
+            <li id="listitem">
+                <span id="albumArt"></span>
+                <span id="content"></span>
+                <span id="listnav"></span>
+            </li>
+        </template>
+        <template id="listNavTemplate">
+            <i class="material-icons">chevron_right</i>
+        </template>
+        <template id="options">
+            <ul id="optionsList">
+                <li id="rating">
+                    <span id="star1"><i class="material-icons">star_border</i></span>
+                    <span id="star2"><i class="material-icons">star_border</i></span>
+                    <span id="star3"><i class="material-icons">star_border</i></span>
+                    <span id="star4"><i class="material-icons">star_border</i></span>
+                    <span id="star5"><i class="material-icons">star_border</i></span> 
+                </li>
+                <li id="tags">
+                    <span><i class="material-icons">loyalty</i></span>
+                </li>
+                <li id="editTags">
+                    <span><i class="material-icons">add_circle_outline</i></span>
+                    <span><p>Add Tags</p></span>
+                </li>
+                <li id="tagsEditor">
+                    <form id="tagsForm">
+                        <input id="input" type="text"></input>
+                        <i id="clear" class="material-icons">clear</i>
+                        <i id="done" class="material-icons">done</i>
+                    </form>
+                </li>
+                <li id="showDetails">
+                    <span><i class="material-icons">music_note</i></span>
+                    <span>Details</span>
+                </li>
+            </ul>
+        </template>
+        <template id="tagsListTemplate">
+            <ul id="tagsList"></ul>
+        </template>
+        <template id="tagTemplate">
+            <li id="tag">
+                <span id="tagName"></span>
+                <span id="delete"><i class="material-icons">clear</i></span>
+            </li>
+        </template>
+
+        <div id="playbar">
+        </div>
+
+        <template id="load-spinner">
+            <div id="loading">
+                <center id="loading-icon">
+                    <div class="loader large dark spin"></div>
+                </center>
+            </div>
+        </template>
+	</body>
+</html>
+
